@@ -1,0 +1,38 @@
+Var
+   nome : caractere
+   salarioMinimo, salarioFinal, horasExtras, horasFaltas, premio, horas : real
+ 
+Inicio
+   escreval("Digite o valor do salário mínimo: ")
+   leia(salarioMinimo)
+   
+   escreval("Digite o nome do funcionário: ")
+   leia(nome)
+ 
+   escreval("Digite o total de horas extras: ")
+   leia(horasExtras)
+   
+   escreval("Digite o total de horas que o funcionário faltou: ")
+   leia(horasFaltas)
+   
+   horas <- horasExtras - ((2/3) * horasFaltas)
+   
+   se (horas < 600 ) entao
+       premio <- 100.00
+   senao(horas <= 1200) entao
+       premio <-  200.00
+   senao(horas <= 1800) entao
+       premio <- 300.00
+   senao(horas <= 2400) entao
+       premio <- 400.00
+   senao
+       premio <- 500.00
+   fimse
+ 
+   salarioFinal <- salarioMinimo + premio
+   
+   escreval("Horas Extras: ", horasExtras)
+   escreval("Horas não trabalhadas: ", horasFaltas)
+   escreval("Horas trabalhadas: ", horas)
+   escreval("Valor do premio: ", premio)
+   escreval("O salário final é: ", salarioFinal)
